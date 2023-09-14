@@ -1,6 +1,7 @@
 Pool: 
 Some systems can get overwhelmed when too many processes hit them at the same time. Airflow pools can be used to limit the execution parallelism on arbitrary sets of tasks. The list of pools is managed in the UI (Menu -> Admin -> Pools) by giving the pools a name and assigning it a number of worker slots. There you can also decide whether the pool should include deferred tasks in its calculation of occupied slots.
 
+Astro Python SDK: The create_reporting_table DAG uses the transform operator of the Astro Python SDK to make creating a reporting table from a SQL Select query simple.
 
 Dynamic task mapping: Several tasks in this repository are dynamically mapped to adjust the number of needed mapped task instances depending on inputs at runtime.
 ```python
@@ -15,6 +16,9 @@ Trigger DAG runs as soon as the climate and weather data is ready in MinIO
 ## in include/load/loads_data.py
 schedule = [gv.DS_CLIMATE_DATA_MINIO, gv.DS_WEATHER_DATA_MINIO]
 ```
+
+
+Airflow XCom and Airflow Variables: Small amounts of data like the current weather in the user-defined city are passed from one task to another using XCom. The coordinates of the city are saved as an Airflow Variable.
 
 ``` python
 ## in include/ingestion/in_climate_data.py
