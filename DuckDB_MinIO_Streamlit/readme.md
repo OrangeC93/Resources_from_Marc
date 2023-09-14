@@ -2,4 +2,6 @@ Page: https://medium.com/apache-airflow/elt-with-airflow-a-no-install-click-and-
 
 Code: https://github.com/TJaniF/airflow-elt-blueprint
 
+Read two data sets locally into Minio and upload to DuckDB, creating report and publish to streamlit App
+
 ![image](pics/dagflow.png)
