@@ -1,0 +1,2 @@
+Pool: 
+Some systems can get overwhelmed when too many processes hit them at the same time. Airflow pools can be used to limit the execution parallelism on arbitrary sets of tasks. The list of pools is managed in the UI (Menu -> Admin -> Pools) by giving the pools a name and assigning it a number of worker slots. There you can also decide whether the pool should include deferred tasks in its calculation of occupied slots.
