@@ -9,3 +9,8 @@ ingest_climate_data = LocalFilesystemToMinIOOperator.partial(
   
 )
 ```
+
+Trigger DAG runs as soon as the climate and weather data is ready in MinIO
+```
+schedule = [gv.DS_CLIMATE_DATA_MINIO, gv.DS_WEATHER_DATA_MINIO]
+```
